@@ -425,9 +425,15 @@ input.addEventListener("keyup", function(event) {
 
   });}
     }
-var servo = document.getElementById('servo');
+    var servo = document.getElementById('servo');
     var  dbRef = firebase.database().ref().child(test+"/state");
     dbRef.on('value', snap=>servo.innerText = snap.val());
+    if(servo.innerText=="1"){
+      servo.innerText="Resetting Device...";
+    }else if(servo.innerText=="1"){
+      servo.innerText="Done";
+    }
+    
   }
 </script>
     <script src="main.js"></script> 
